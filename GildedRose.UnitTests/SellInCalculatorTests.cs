@@ -21,7 +21,7 @@ namespace GildedRose.UnitTests
             sellInCalculator.DecreaseSellIn(item);
 
             //Assert
-            Assert.Equal(item.SellIn, sellIn - 1);
+            Assert.Equal(sellIn - 1, item.SellIn);
         }
 
         [Theory]
@@ -32,13 +32,14 @@ namespace GildedRose.UnitTests
         {
             //Arrange
             var item = Constructors.ItemLegendary;
+            item.SellIn = sellIn;
             var sellInCalculator = new ItemSellInCalculator();
 
             //Act
             sellInCalculator.DecreaseSellIn(item);
 
             //Assert
-            Assert.Equal(item.SellIn, Constants.RegularItemSellIn);
+            Assert.Equal(sellIn, item.SellIn);
         }
     }
 }

@@ -18,6 +18,10 @@ namespace GildedRose.QualityCalculators
             //No item can have a quality less than 0
             if (item.Quality < 0)
                 item.Quality = 0;
+
+            //For every item except sulfras the quality limit is 50
+            if (!item.Name.StartsWith(ItemNames.SulfrasPrefix) && item.Quality > 50)
+                item.Quality = 50;
         }
 
         /// <summary>

@@ -28,9 +28,6 @@ namespace GildedRose.QualityCalculators
             }
             else if (!item.Name.StartsWith(ItemNames.SulfrasPrefix))
                 item.Quality--;
-
-            if (!item.Name.StartsWith(ItemNames.SulfrasPrefix) && item.Quality > 50)
-                item.Quality = 50;
         }
     }
 }

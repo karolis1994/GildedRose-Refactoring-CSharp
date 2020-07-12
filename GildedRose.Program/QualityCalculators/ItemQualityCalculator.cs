@@ -5,7 +5,7 @@ namespace GildedRose.QualityCalculators
     /// <summary>
     /// Item quality calculator
     /// </summary>
-    public class ItemQualityCalculator : ItemQualityCalculatorBase
+    public sealed class ItemQualityCalculator : ItemQualityCalculatorBase
     {
         /// <summary>
         /// <inheritdoc/>

@@ -9,6 +9,6 @@ namespace GildedRose.UnitTests
         public const int RegularItemSellIn = 10;
 
         public const string RegularItemName = "Item";
-        public const string LegendaryItemName = "Sulfras";
+        public const string LegendaryItemName = "Sulfuras";
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GildedRose.Items
+﻿namespace GildedRose.Items
 {
     public static class ItemNames
     {

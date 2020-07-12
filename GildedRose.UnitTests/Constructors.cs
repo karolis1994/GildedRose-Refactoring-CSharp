@@ -31,5 +31,12 @@ namespace GildedRose.UnitTests
             Quality = 0,
             SellIn = Constants.Ten
         };
+
+        public static Item ItemBackstagePasses => new Item()
+        {
+            Name = ItemNames.BackstagePassesPrefix + "test",
+            Quality = 0,
+            SellIn = Constants.Ten
+        };
     }
 }

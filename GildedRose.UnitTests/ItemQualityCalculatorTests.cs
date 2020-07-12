@@ -110,5 +110,86 @@ namespace GildedRose.UnitTests
             //Assert
             Assert.Equal(80, item.Quality);
         }
+
+        [Theory]
+        [InlineData(11)]
+        [InlineData(12)]
+        [InlineData(20)]
+        [InlineData(30)]
+        [InlineData(100)]
+        [InlineData(1100)]
+        public void UpdateQuality_BackstagePasses_IncreasesByOne(int sellIn)
+        {
+            //Arrange
+            var item = Constructors.ItemBackstagePasses;
+            item.SellIn = sellIn;
+            item.Quality = Constants.Zero;
+            var qualityCalculator = new ItemQualityCalculator();
+
+            //Act
+            qualityCalculator.UpdateQuality(item);
+
+            //Assert
+            Assert.Equal(Constants.Zero + 1, item.Quality);
+        }
+
+        [Theory]
+        [InlineData(10)]
+        [InlineData(9)]
+        [InlineData(8)]
+        [InlineData(7)]
+        [InlineData(6)]
+        public void UpdateQuality_BackstagePasses_IncreasesByTwo(int sellIn)
+        {
+            //Arrange
+            var item = Constructors.ItemBackstagePasses;
+            item.SellIn = sellIn;
+            item.Quality = Constants.Zero;
+            var qualityCalculator = new ItemQualityCalculator();
+
+            //Act
+            qualityCalculator.UpdateQuality(item);
+
+            //Assert
+            Assert.Equal(Constants.Zero + 2, item.Quality);
+        }
+
+        [Theory]
+        [InlineData(5)]
+        [InlineData(4)]
+        [InlineData(3)]
+        [InlineData(2)]
+        [InlineData(1)]
+        [InlineData(0)]
+        public void UpdateQuality_BackstagePasses_IncreasesByThree(int sellIn)
+        {
+            //Arrange
+            var item = Constructors.ItemBackstagePasses;
+            item.SellIn = sellIn;
+            item.Quality = Constants.Zero;
+            var qualityCalculator = new ItemQualityCalculator();
+
+            //Act
+            qualityCalculator.UpdateQuality(item);
+
+            //Assert
+            Assert.Equal(Constants.Zero + 3, item.Quality);
+        }
+
+        [Fact]
+        public void UpdateQuality_BackstagePasses_RevertsToZero()
+        {
+            //Arrange
+            var item = Constructors.ItemBackstagePasses;
+            item.SellIn = -1;
+            item.Quality = Constants.Ten;
+            var qualityCalculator = new ItemQualityCalculator();
+
+            //Act
+            qualityCalculator.UpdateQuality(item);
+
+            //Assert
+            Assert.Equal(Constants.Zero, item.Quality);
+        }
     }
 }

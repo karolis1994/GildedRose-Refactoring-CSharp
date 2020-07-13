@@ -15,6 +15,7 @@ namespace GildedRose.QualityCalculators
         {
             //Vietoje sitos vietos galvojau skirtingiems Itemams kurti atskiras klases, tokias kaip ItemLegendary, ItemConjured
             //Bet pagal reikalavimus kaip supratau keisti Item listo negalima, todel palikau skaiciavimus cia
+            //Ideja butu buvus atskiram itemui naudoti atskira quality calculatoriu
             if (item.Name == ItemNames.AgedBrie || (item.Name.StartsWith(ItemNames.BackstagePassesPrefix) && item.SellIn > 10))
                 item.Quality++;
             else if (item.Name.StartsWith(ItemNames.ConjuredPrefix))

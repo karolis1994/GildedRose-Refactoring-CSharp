@@ -1,4 +1,5 @@
-﻿using GildedRose.Program.QualityCalculators;
+﻿using GildedRose.Program.Items;
+using GildedRose.Program.QualityCalculators;
 using Xunit;
 
 namespace GildedRose.UnitTests
@@ -41,7 +42,7 @@ namespace GildedRose.UnitTests
             //Arrange
             var item = Constructors.ItemConjured;
             item.Quality = Constants.Zero;
-            var qualityCalculator = new ItemQualityCalculator();
+            var qualityCalculator = new ItemQualityMultipliableQualityCalculator();
 
             //Act
             qualityCalculator.UpdateQuality(item);
@@ -56,7 +57,7 @@ namespace GildedRose.UnitTests
             //Arrange
             var item = Constructors.ItemConjured;
             item.Quality = Constants.Ten;
-            var qualityCalculator = new ItemQualityCalculator();
+            var qualityCalculator = new ItemQualityMultipliableQualityCalculator();
 
             //Act
             qualityCalculator.UpdateQuality(item);
@@ -71,7 +72,7 @@ namespace GildedRose.UnitTests
             //Arrange
             var item = Constructors.ItemAgedBrie;
             item.Quality = 50;
-            var qualityCalculator = new ItemQualityCalculator();
+            var qualityCalculator = new ItemQualityMultipliableQualityCalculator();
 
             //Act
             qualityCalculator.UpdateQuality(item);
@@ -86,13 +87,32 @@ namespace GildedRose.UnitTests
             //Arrange
             var item = Constructors.ItemAgedBrie;
             item.Quality = Constants.Zero;
-            var qualityCalculator = new ItemQualityCalculator();
+            var qualityCalculator = new ItemQualityMultipliableQualityCalculator();
 
             //Act
             qualityCalculator.UpdateQuality(item);
 
             //Assert
             Assert.Equal(Constants.Zero + 1, item.Quality);
+        }
+
+        [Fact]
+        public void UpdateQuality_ItemQualityMultipliable_IncreasesByTwo()
+        {
+            //Arrange
+            var item = new ItemQualityMultipliable(new QualityTickMultiplier(null, -1))
+            {
+                Name = "",
+                Quality = 10,
+                SellIn = -1
+            };
+            var qualityCalculator = new ItemQualityMultipliableQualityCalculator();
+
+            //Act
+            qualityCalculator.UpdateQuality(item);
+
+            //Assert
+            Assert.Equal(12, item.Quality);
         }
 
         [Fact]
@@ -123,7 +143,7 @@ namespace GildedRose.UnitTests
             var item = Constructors.ItemBackstagePasses;
             item.SellIn = sellIn;
             item.Quality = Constants.Zero;
-            var qualityCalculator = new ItemQualityCalculator();
+            var qualityCalculator = new ItemQualityMultipliableQualityCalculator();
 
             //Act
             qualityCalculator.UpdateQuality(item);
@@ -144,7 +164,7 @@ namespace GildedRose.UnitTests
             var item = Constructors.ItemBackstagePasses;
             item.SellIn = sellIn;
             item.Quality = Constants.Zero;
-            var qualityCalculator = new ItemQualityCalculator();
+            var qualityCalculator = new ItemQualityMultipliableQualityCalculator();
 
             //Act
             qualityCalculator.UpdateQuality(item);
@@ -166,7 +186,7 @@ namespace GildedRose.UnitTests
             var item = Constructors.ItemBackstagePasses;
             item.SellIn = sellIn;
             item.Quality = Constants.Zero;
-            var qualityCalculator = new ItemQualityCalculator();
+            var qualityCalculator = new ItemQualityMultipliableQualityCalculator();
 
             //Act
             qualityCalculator.UpdateQuality(item);
@@ -182,7 +202,7 @@ namespace GildedRose.UnitTests
             var item = Constructors.ItemBackstagePasses;
             item.SellIn = -1;
             item.Quality = Constants.Ten;
-            var qualityCalculator = new ItemQualityCalculator();
+            var qualityCalculator = new ItemQualityMultipliableQualityCalculator();
 
             //Act
             qualityCalculator.UpdateQuality(item);

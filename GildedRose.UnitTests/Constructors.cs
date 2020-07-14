@@ -6,35 +6,35 @@ namespace GildedRose.UnitTests
     {
         public static Item Item => new Item()
         {
-            Name = Constants.RegularItemName,
+            Name = Constants.ItemName,
             Quality = 0,
             SellIn = Constants.Ten
         };
 
-        public static Item ItemLegendary => new Item()
+        public static ItemLegendary ItemLegendary => new ItemLegendary()
         {
-            Name = Constants.LegendaryItemName,
+            Name = Constants.ItemName,
             Quality = 0,
             SellIn = Constants.Ten
         };
 
-        public static Item ItemConjured => new Item()
+        public static Item ItemConjured => new ItemConjured()
         {
-            Name = Constants.ConjuredItemName,
+            Name = Constants.ItemName,
             Quality = 0,
             SellIn = Constants.Ten
         };
 
-        public static Item ItemAgedBrie => new Item()
+        public static ItemQualityMultipliable ItemAgedBrie => new ItemQualityMultipliable(new QualityTickMultiplier(null, -1))
         {
-            Name = ItemNames.AgedBrie,
+            Name = Constants.ItemName,
             Quality = 0,
             SellIn = Constants.Ten
         };
 
-        public static Item ItemBackstagePasses => new Item()
+        public static Item ItemBackstagePasses => new ItemBackstagePasses()
         {
-            Name = ItemNames.BackstagePassesPrefix + "test",
+            Name = Constants.ItemName,
             Quality = 0,
             SellIn = Constants.Ten
         };

@@ -7,7 +7,7 @@ namespace GildedRose.Program.SellInCalculators
     {
         public void DecreaseSellIn(Item item)
         {
-            if (!item.Name.StartsWith(ItemNames.SulfrasPrefix))
+            if (item.GetType() != typeof(ItemLegendary))
                 item.SellIn--;
         }
     }

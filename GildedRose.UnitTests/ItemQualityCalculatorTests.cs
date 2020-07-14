@@ -1,5 +1,4 @@
-﻿using GildedRose.QualityCalculators;
-using System.Reflection.Metadata;
+﻿using GildedRose.Program.QualityCalculators;
 using Xunit;
 
 namespace GildedRose.UnitTests

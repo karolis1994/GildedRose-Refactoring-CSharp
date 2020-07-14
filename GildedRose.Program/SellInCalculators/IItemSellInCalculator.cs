@@ -1,6 +1,7 @@
-﻿using GildedRose;
+﻿using GildedRose.Program;
+using GildedRose.Program.Items;
 
-namespace csharpcore.SellInCalculators
+namespace GildedRose.Program.SellInCalculators
 {
     /// <summary>
     /// Item sell in calculator

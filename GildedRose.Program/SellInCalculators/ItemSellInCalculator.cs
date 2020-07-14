@@ -1,7 +1,7 @@
-﻿using csharpcore.SellInCalculators;
-using GildedRose.Items;
+﻿using GildedRose.Program.SellInCalculators;
+using GildedRose.Program.Items;
 
-namespace GildedRose.SellInCalculators
+namespace GildedRose.Program.SellInCalculators
 {
     public class ItemSellInCalculator : IItemSellInCalculator
     {

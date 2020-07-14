@@ -1,4 +1,4 @@
-﻿using GildedRose.Items;
+﻿using GildedRose.Program.Items;
 
 namespace GildedRose.UnitTests
 {

@@ -1,5 +1,4 @@
-using GildedRose.SellInCalculators;
-using System;
+using GildedRose.Program.SellInCalculators;
 using Xunit;
 
 namespace GildedRose.UnitTests

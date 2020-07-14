@@ -1,4 +1,4 @@
-﻿namespace GildedRose.Items
+﻿namespace GildedRose.Program.Items
 {
     public static class ItemNames
     {

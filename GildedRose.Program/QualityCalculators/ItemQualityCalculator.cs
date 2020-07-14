@@ -1,6 +1,6 @@
-﻿using GildedRose.Items;
+﻿using GildedRose.Program.Items;
 
-namespace GildedRose.QualityCalculators
+namespace GildedRose.Program.QualityCalculators
 {
     /// <summary>
     /// Item quality calculator

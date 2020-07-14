@@ -1,6 +1,7 @@
-﻿using csharpcore.SellInCalculators;
-using GildedRose.QualityCalculators;
+﻿using GildedRose.Program.SellInCalculators;
+using GildedRose.Program.QualityCalculators;
 using System.Collections.Generic;
+using GildedRose.Program.Items;
 
 namespace GildedRose
 {

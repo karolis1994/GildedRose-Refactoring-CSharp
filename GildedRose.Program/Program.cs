@@ -1,9 +1,10 @@
-﻿using GildedRose.QualityCalculators;
-using GildedRose.SellInCalculators;
+﻿using GildedRose.Program.Items;
+using GildedRose.Program.QualityCalculators;
+using GildedRose.Program.SellInCalculators;
 using System;
 using System.Collections.Generic;
 
-namespace GildedRose
+namespace GildedRose.Program
 {
     public class Program
     {
